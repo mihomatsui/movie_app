@@ -22,9 +22,10 @@ Bundler.require(*Rails.groups)
 module MovieApp
   class Application < Rails::Application
     config.load_defaults 6.1
-
     config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo'
     config.generators.system_tests = nil
+    # lib/autoloads ディレクトリ配下のファイルを読み込む
+    config.autoload_paths << Rails.root.join("lib/autoloads")
   end
 end
